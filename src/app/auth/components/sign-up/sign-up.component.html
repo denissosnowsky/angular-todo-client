@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <form class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="field">
+      <input matInput placeholder="Enter your name" formControlName="name" />
+      <mat-error *ngIf="name?.errors?.['required']">
+        Name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <input
+        matInput
+        placeholder="Enter your email"
+        formControlName="email"
+        type="email"
+      />
+      <mat-error
+        *ngIf="email?.errors?.['email'] && !email?.errors?.['required']"
+      >
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="email?.errors?.['required']">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <input
+        matInput
+        placeholder="Enter your password"
+        formControlName="passwordFirst"
+        type="password"
+      />
+      <mat-error *ngIf="passwordFirst?.errors?.['required']">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <input
+        matInput
+        placeholder="Reenter your password"
+        formControlName="passwordSecond"
+        type="password"
+      />
+      <mat-error *ngIf="passwordSecond?.invalid">
+        Passwords should be the <strong>same</strong>
+      </mat-error>
+    </mat-form-field>
+    <button
+      type="submit"
+      mat-raised-button
+      class="button"
+      color="primary"
+      [disabled]="!signUpForm.valid"
+    >
+      Sign Up
+    </button>
+  </form>
+</div>

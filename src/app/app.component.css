@@ -1,0 +1,29 @@
+.container {
+  margin: 0 auto;
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100% - 80px);
+  font-size: 18px;
+}
+
+.header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 30px;
+  position: relative;
+}
+
+.header::after {
+  position: absolute;
+  content: '';
+  height: 1px;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  background-color: #000;
+}
