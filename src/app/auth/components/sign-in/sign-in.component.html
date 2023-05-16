@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <form class="form" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="field">
+      <input
+        matInput
+        placeholder="Enter your email"
+        formControlName="email"
+        type="email"
+      />
+      <mat-error
+        *ngIf="email?.errors?.['email'] && !email?.errors?.['required']"
+      >
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="email?.errors?.['required']">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="field">
+      <input
+        matInput
+        placeholder="Enter your password"
+        formControlName="password"
+        type="password"
+      />
+      <mat-error *ngIf="password?.errors?.['required']">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <button
+      type="submit"
+      mat-raised-button
+      class="button"
+      color="primary"
+      [disabled]="!signInForm.valid"
+    >
+      Sign In
+    </button>
+  </form>
+</div>

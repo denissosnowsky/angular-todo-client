@@ -1,4 +1,34 @@
-<div class="header">Todo App</div>
+<div class="header">
+  <div></div>
+  <div>Todo App</div>
+  <div>
+    <button
+      class="authBtn"
+      mat-raised-button
+      (click)="changeAuthMethod()"
+      *ngIf="
+        !userService.getUserInfo().isLogged &&
+        (path === '/signUp' || path === '/signIn')
+      "
+    >
+      {{ path === '/signUp' ? 'Sign In' : '' }}
+      {{ path === '/signIn' ? 'Sign Up' : '' }}
+    </button>
+    <button
+      class="authBtn"
+      mat-raised-button
+      *ngIf="userService.getUserInfo().isLogged"
+      (click)="signOut()"
+    >
+      Sign Out
+    </button>
+  </div>
+</div>
 <div class="container">
-  <router-outlet></router-outlet>
+  <div *ngIf="!loading">
+    <router-outlet></router-outlet>
+  </div>
+  <div *ngIf="loading">
+    <app-loading></app-loading>
+  </div>
 </div>

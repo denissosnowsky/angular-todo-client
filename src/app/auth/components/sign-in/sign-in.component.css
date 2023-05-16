@@ -1,0 +1,27 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.field {
+  width: 100%;
+}
+
+.button {
+  width: 80px;
+}
+
+.ng-invalid:not(form) {
+  color: #a94442;
+}

@@ -7,6 +7,8 @@ import { AppComponent } from './app.component'
 import { AuthModule } from './auth/auth.module'
 import { ErrorModule } from './error/error.module'
 import { TodoListModule } from './todo-list/todo-list.module'
+import { MaterialModule } from './material/material.module'
+import { LoadingComponent } from './common/loading/loading.component'
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +20,8 @@ import { TodoListModule } from './todo-list/todo-list.module'
     HttpClientModule,
     ErrorModule,
     TodoListModule,
+    MaterialModule,
+    LoadingComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

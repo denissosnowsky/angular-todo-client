@@ -87,9 +87,8 @@ export class SignUpComponent {
 
     signUpStream$.subscribe(res => {
       if (res) {
-        localStorage.setItem('token', res.token)
-        this.userService.setUserLogged()
-        this.router.navigateByUrl('/')
+        this.userService.setUserLogged(res.token)
+        this.router.navigateByUrl('/activate')
       }
 
       this.loading = false
