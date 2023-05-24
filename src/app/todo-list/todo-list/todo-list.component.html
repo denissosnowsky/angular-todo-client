@@ -1,1 +1,11 @@
-<p>todo-list works!</p>
+<div class="wrapper">
+  <div class="addForm" app-form (addTodoEvent)="addTodo($event)"></div>
+  <div
+    *ngFor="let item of list"
+    app-row
+    [text]="item.title"
+    [completed]="item.completed"
+    (deleteEvent)="deleteTodo(item.id)"
+    (checkEvent)="checkTodo(item.id)"
+  ></div>
+</div>

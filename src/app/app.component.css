@@ -3,9 +3,13 @@
   width: 70vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   height: calc(100% - 80px);
   font-size: 18px;
+}
+
+.container > div {
+  width: 100%;
+  height: calc(100% - 80px);
 }
 
 .header {
@@ -26,6 +30,11 @@
   left: 0px;
   bottom: 0px;
   background-color: #000;
+}
+
+.header > div:last-of-type,
+.header > div:first-of-type {
+  min-width: 130px;
 }
 
 .authBtn {

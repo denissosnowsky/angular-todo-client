@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <div>
+    <mat-checkbox
+      [checked]="completed"
+      (change)="check($event.checked)"
+    ></mat-checkbox>
+  </div>
+  <div class="text">
+    {{ text }}
+  </div>
+  <div class="delete" (click)="delete()">&#10008;</div>
+</div>

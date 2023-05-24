@@ -1,0 +1,19 @@
+.wrapper {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  background-color: cadetblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text {
+  margin-left: 20px;
+  margin-right: 20px;
+  flex: 1;
+}
+
+.delete {
+  cursor: pointer;
+}

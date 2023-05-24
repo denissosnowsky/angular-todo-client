@@ -27,7 +27,8 @@ export class UserService {
   getUserInfo () {
     return {
       isLogged: this.isLogged,
-      isActivated: this.isActivated
+      isActivated: this.isActivated,
+      id: this.id
     }
   }
 

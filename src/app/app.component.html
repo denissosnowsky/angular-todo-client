@@ -7,7 +7,7 @@
       mat-raised-button
       (click)="changeAuthMethod()"
       *ngIf="
-        !userService.getUserInfo().isLogged &&
+        !isUserLogged &&
         (path === '/signUp' || path === '/signIn')
       "
     >
@@ -17,7 +17,7 @@
     <button
       class="authBtn"
       mat-raised-button
-      *ngIf="userService.getUserInfo().isLogged"
+      *ngIf="isUserLogged"
       (click)="signOut()"
     >
       Sign Out

@@ -31,8 +31,7 @@
       type="submit"
       mat-raised-button
       class="button"
-      color="primary"
-      [disabled]="!signInForm.valid"
+      *ngIf="signInForm.valid"
     >
       Sign In
     </button>
