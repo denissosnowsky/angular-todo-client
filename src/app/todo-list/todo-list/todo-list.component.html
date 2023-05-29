@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="addForm" app-form (addTodoEvent)="addTodo($event)"></div>
   <div
-    *ngFor="let item of list | transformCase:'firstUpper'"
+    *ngFor="let item of list$ | async | transformCase:'firstUpper'"
     app-row
     [text]="item.title"
     [completed]="item.completed"
